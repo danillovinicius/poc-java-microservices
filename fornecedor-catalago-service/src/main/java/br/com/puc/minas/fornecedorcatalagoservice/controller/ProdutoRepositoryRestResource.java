@@ -11,22 +11,8 @@ import br.com.puc.minas.fornecedorcatalagoservice.model.Produto;
 @RepositoryRestResource(collectionResourceRel = "produto", path = "produto")
 public interface ProdutoRepositoryRestResource extends PagingAndSortingRepository<Produto, Long> {
 
-	// https://github.com/kbastani/spring-cloud-microservice-example
-	// https://spring.io/guides/gs/accessing-data-rest/
 	List<Produto> findByNome(@Param("nome") String nome);
 	
 	List<Produto> findAll();
-	
-/*	@Transactional
-    @Modifying
-    @Query("insert into RevisaoAnualIndicador (revisaoAnual, indicador, loginAtualizacao, dataAtualizacao) select :revisaoAnual, i, :usuario, "
-        + ":dataAtualizacao from Indicador i where i.situacaoIndicador = :situacao ")
-    void incluirIndicadoresAtivos(
-            @Param("revisaoAnual") RevisaoAnual revisaoAnual,
-            @Param("usuario") String usuario,
-            @Param("dataAtualizacao") LocalDateTime dataAtualizacao,
-            @Param("situacao") SituacaoIndicadorEnum situacao
-        );
-*/
-	
+
 }
